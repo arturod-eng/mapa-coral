@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mapa Coral · La magia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="start">
+  <div class="intro">
+    <h1>La Música Coral</h1>
+    <p>Apunta la cámara al retrato de <b>Hildegard</b>, <b>Palestrina</b> o <b>John Rutter</b>.</p>
+    <p class="small">Para esta primera prueba, sostén el teléfono aproximadamente paralelo al mapa y acerca el retrato al centro.</p>
+    <button id="go">✨ Comenzar la magia</button>
+  </div>
+</div>
+
+<video id="video" playsinline muted></video>
+<canvas id="canvas"></canvas>
+<div id="reticle"></div>
+<div id="status">Preparando reconocimiento…</div>
+
+<div id="card" class="card hidden">
+  <div class="period" id="period"></div>
+  <h2 id="name"></h2>
+  <div class="dates" id="dates"></div>
+  <div class="work" id="work"></div>
+  <a id="listen" target="_blank" rel="noopener">▶ ESCUCHAR</a>
+</div>
+
+<div class="targets">
+  <img id="ref-hildegard" src="targets/hildegard.jpg">
+  <img id="ref-palestrina" src="targets/palestrina.jpg">
+  <img id="ref-rutter" src="targets/rutter.jpg">
+</div>
+
+<script async src="https://docs.opencv.org/4.x/opencv.js" onload="window.cvReady=true"></script>
+<script src="app.js"></script>
+</body>
+</html>
