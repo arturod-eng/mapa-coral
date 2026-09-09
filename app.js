@@ -1,60 +1,14 @@
 const people={
-  hildegard:{name:"Hildegard von Bingen",dates:"1098–1179",period:"EDAD MEDIA",work:"O vis aeternitatis",url:"https://www.youtube.com/results?search_query=Hildegard+von+Bingen+O+vis+aeternitatis"},
-  palestrina:{name:"Giovanni Pierluigi da Palestrina",dates:"c. 1525–1594",period:"RENACIMIENTO · DIRECTOR",work:"Sicut cervus",url:"https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus"},
-  rutter:{name:"John Rutter",dates:"1945–",period:"CONTEMPORÁNEA",work:"For the Beauty of the Earth",url:"https://www.youtube.com/results?search_query=John+Rutter+For+the+Beauty+of+the+Earth"}
-};
-const video=document.getElementById("video"), canvas=document.getElementById("canvas"),
-ctx=canvas.getContext("2d"), statusEl=document.getElementById("status"), card=document.getElementById("card");
-let refs=[], running=false, lastHit=0;
-
-function waitCV(){return new Promise(resolve=>{let t=setInterval(()=>{if(window.cvReady&&window.cv&&cv.Mat){clearInterval(t);resolve()}},100)})}
-function showCard(key,score){
-  const p=people[key]; document.getElementById("period").textContent=p.period;
-  document.getElementById("name").textContent=p.name; document.getElementById("dates").textContent=p.dates;
-  document.getElementById("work").textContent=p.work; document.getElementById("listen").href=p.url;
-  card.classList.remove("hidden"); statusEl.textContent="✓ Reconocido · "+Math.round(score*100)+"%";
-  lastHit=Date.now();
-}
-async function buildRefs(){
-  refs=[];
-  for(const key of Object.keys(people)){
-    const src=cv.imread("ref-"+key), gray=new cv.Mat(); cv.cvtColor(src,gray,cv.COLOR_RGBA2GRAY);
-    refs.push({key,mat:gray}); src.delete();
-  }
-}
-async function start(){
-  document.getElementById("go").disabled=true; statusEl.textContent="Solicitando cámara…";
-  const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"},width:{ideal:1280},height:{ideal:720}},audio:false});
-  video.srcObject=stream; await video.play(); await waitCV(); await buildRefs();
-  document.getElementById("start").style.display="none"; running=true; scan();
-}
+hildegard:{name:"Hildegard von Bingen",dates:"1098–1179",period:"EDAD MEDIA",work:"O vis aeternitatis",url:"https://www.youtube.com/results?search_query=Hildegard+von+Bingen+O+vis+aeternitatis"},
+palestrina:{name:"Giovanni Pierluigi da Palestrina",dates:"c. 1525–1594",period:"RENACIMIENTO · DIRECTOR",work:"Sicut cervus",url:"https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus"},
+rutter:{name:"John Rutter",dates:"1945–",period:"CONTEMPORÁNEA",work:"For the Beauty of the Earth",url:"https://www.youtube.com/results?search_query=John+Rutter+For+the+Beauty+of+the+Earth"}};
+const video=document.getElementById("video"),canvas=document.getElementById("canvas"),ctx=canvas.getContext("2d"),statusEl=document.getElementById("status"),card=document.getElementById("card");
+let refs=[],running=false,lastHit=0,stableKey=null,stableCount=0;
+function waitCV(){return new Promise(resolve=>{let t=setInterval(()=>{if(window.cvReady&&window.cv&&cv.Mat&&cv.ORB){clearInterval(t);resolve()}},100)})}
+function showCard(key,score){const p=people[key];document.getElementById("period").textContent=p.period;document.getElementById("name").textContent=p.name;document.getElementById("dates").textContent=p.dates;document.getElementById("work").textContent=p.work;document.getElementById("listen").href=p.url;card.classList.remove("hidden");statusEl.textContent="✓ Reconocido · "+Math.round(score*100)+"%";lastHit=Date.now()}
+function features(gray){let orb=new cv.ORB(1000),kp=new cv.KeyPointVector(),des=new cv.Mat(),mask=new cv.Mat();orb.detectAndCompute(gray,mask,kp,des);mask.delete();orb.delete();return {kp,des}}
+async function buildRefs(){refs=[];for(const key of Object.keys(people)){let src=cv.imread("ref-"+key),g=new cv.Mat();cv.cvtColor(src,g,cv.COLOR_RGBA2GRAY);let r=new cv.Mat();let w=420,h=Math.round(g.rows*w/g.cols);cv.resize(g,r,new cv.Size(w,h),0,0,cv.INTER_AREA);let f=features(r);refs.push({key,des:f.des,kp:f.kp});src.delete();g.delete();r.delete()}}
+async function start(){document.getElementById("go").disabled=true;statusEl.textContent="Solicitando cámara…";const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"},width:{ideal:1280},height:{ideal:720}},audio:false});video.srcObject=stream;await video.play();await waitCV();await buildRefs();document.getElementById("start").style.display="none";running=true;scan()}
 document.getElementById("go").onclick=()=>start().catch(e=>{alert("No pude abrir la cámara. Abre el sitio por HTTPS y permite acceso a la cámara.\n\n"+e.message);document.getElementById("go").disabled=false});
-
-function scan(){
-  if(!running)return;
-  const vw=640, vh=Math.round(640*video.videoHeight/video.videoWidth);
-  canvas.width=vw; canvas.height=vh; ctx.drawImage(video,0,0,vw,vh);
-  let frame=cv.imread(canvas), gray=new cv.Mat(); cv.cvtColor(frame,gray,cv.COLOR_RGBA2GRAY); frame.delete();
-  let best={key:null,score:-1,rect:null};
-  for(const r of refs){
-    for(const s of [0.32,0.40,0.50,0.62,0.76,0.92,1.08]){
-      const w=Math.round(r.mat.cols*s),h=Math.round(r.mat.rows*s);
-      if(w<45||h<45||w>=gray.cols||h>=gray.rows)continue;
-      let templ=new cv.Mat(); cv.resize(r.mat,templ,new cv.Size(w,h),0,0,cv.INTER_AREA);
-      let result=new cv.Mat(); cv.matchTemplate(gray,templ,result,cv.TM_CCOEFF_NORMED);
-      let mm=cv.minMaxLoc(result);
-      if(mm.maxVal>best.score)best={key:r.key,score:mm.maxVal,rect:{x:mm.maxLoc.x,y:mm.maxLoc.y,w,h}};
-      templ.delete();result.delete();
-    }
-  }
-  gray.delete();
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  if(best.score>0.58){
-    ctx.strokeStyle="#e7c476";ctx.lineWidth=4;ctx.strokeRect(best.rect.x,best.rect.y,best.rect.w,best.rect.h);
-    showCard(best.key,best.score);
-  }else{
-    statusEl.textContent="Buscando Hildegard · Palestrina · Rutter…";
-    if(Date.now()-lastHit>1800)card.classList.add("hidden");
-  }
-  setTimeout(scan,650);
-}
+function compare(fd,rd){if(fd.empty()||rd.empty())return{good:0,score:0};let m=new cv.BFMatcher(cv.NORM_HAMMING,false),v=new cv.DMatchVector();m.match(rd,fd,v);let ds=[];for(let i=0;i<v.size();i++)ds.push(v.get(i).distance);v.delete();m.delete();ds.sort((a,b)=>a-b);let good=ds.filter(d=>d<48).length,top=ds.slice(0,Math.min(24,ds.length)),avg=top.length?top.reduce((a,b)=>a+b,0)/top.length:100,quality=Math.max(0,Math.min(1,(70-avg)/45)),count=Math.max(0,Math.min(1,(good-5)/22));return{good,score:.58*quality+.42*count}}
+function scan(){if(!running)return;let vw=720,vh=Math.round(720*video.videoHeight/video.videoWidth);canvas.width=vw;canvas.height=vh;ctx.drawImage(video,0,0,vw,vh);let rgba=cv.imread(canvas),g=new cv.Mat();cv.cvtColor(rgba,g,cv.COLOR_RGBA2GRAY);rgba.delete();let rx=Math.round(g.cols*.09),ry=Math.round(g.rows*.09),rw=Math.round(g.cols*.82),rh=Math.round(g.rows*.82),roi=g.roi(new cv.Rect(rx,ry,rw,rh)),small=new cv.Mat(),fw=560,fh=Math.round(roi.rows*fw/roi.cols);cv.resize(roi,small,new cv.Size(fw,fh),0,0,cv.INTER_AREA);roi.delete();g.delete();let f=features(small);small.delete();let scores=refs.map(r=>({key:r.key,...compare(f.des,r.des)})).sort((a,b)=>b.score-a.score);f.des.delete();f.kp.delete();let best=scores[0],second=scores[1],ok=best.good>=11&&best.score>=.43&&(best.score-second.score)>=.075;ctx.clearRect(0,0,canvas.width,canvas.height);if(ok){if(stableKey===best.key)stableCount++;else{stableKey=best.key;stableCount=1}statusEl.textContent=`Verificando ${people[best.key].name}… ${stableCount}/2`;if(stableCount>=2)showCard(best.key,best.score)}else{stableKey=null;stableCount=0;statusEl.textContent="Acerca un retrato al centro · buscando…";if(Date.now()-lastHit>1600)card.classList.add("hidden")}setTimeout(scan,700)}
