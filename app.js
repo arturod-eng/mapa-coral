@@ -540,6 +540,35 @@ brahms: {
     legacy: "Messiaen amplió radicalmente las posibilidades del lenguaje coral mediante ritmos complejos, modos propios y sonoridades de gran intensidad espiritual. Sus obras vocales no buscan continuidad tradicional, sino experiencias de color, tiempo y contemplación.",
     listen: "En Cinq rechants escucha cómo las voces funcionan a veces como lenguaje, a veces como ritmo y a veces como pura materia sonora. Presta atención a las sílabas inventadas y a la sensación de que el tiempo musical se expande y se contrae.",
     curiosity: "Messiaen transcribió durante años cantos de aves y los incorporó a numerosas composiciones. Para él, los pájaros eran grandes músicos de la naturaleza y una fuente inagotable de inspiración."
+  },  part: {
+    bio: "Compositor estonio y una de las figuras más influyentes de la música contemporánea. Tras una etapa inicial de experimentación, desarrolló un lenguaje propio de gran austeridad y profundidad espiritual.",
+    legacy: "Pärt transformó la escritura coral contemporánea mediante su técnica tintinnabuli, basada en la relación entre líneas melódicas simples y armonías que evocan el sonido de campanas. Su música busca claridad, silencio interior y una intensa concentración sonora.",
+    listen: "En Te Deum escucha cómo las voces avanzan con una lentitud casi ritual. Presta atención al espacio entre los sonidos, a las repeticiones y a la manera en que la armonía parece suspendida, como si el tiempo musical respirara de otra forma.",
+    curiosity: "El nombre tintinnabuli procede del latín tintinnabulum, 'campana'. Pärt ha explicado que encontró en este lenguaje una forma de reducir la música a lo esencial y de expresar una profunda dimensión espiritual."
+  },
+  lauridsen: {
+    bio: "Compositor estadounidense estrechamente vinculado a la tradición coral de finales del siglo XX y comienzos del XXI. Su música se caracteriza por una gran sensibilidad armónica y una relación muy cuidada entre texto y sonoridad.",
+    legacy: "Lauridsen renovó la escritura coral mediante armonías luminosas, texturas amplias y una búsqueda constante de resonancia y contemplación. Sus obras se han convertido en repertorio habitual de coros de todo el mundo.",
+    listen: "En O Magnum Mysterium escucha cómo la armonía parece expandirse lentamente alrededor del texto. Fíjate en las disonancias suaves, en las resoluciones demoradas y en la sensación de luminosidad que surge cuando las voces se funden.",
+    curiosity: "O Magnum Mysterium fue compuesto en 1994 y se convirtió en una de las obras corales contemporáneas más interpretadas. Su éxito ayudó a consolidar a Lauridsen como una figura central del repertorio coral moderno."
+  },
+  rutter: {
+    bio: "Compositor, director y editor británico, una de las figuras más populares de la música coral contemporánea. Su obra combina una escritura vocal accesible, gran sentido melódico y una profunda comprensión práctica del coro.",
+    legacy: "Rutter ha contribuido enormemente a acercar la música coral a públicos y agrupaciones muy diversos. Su escritura combina tradición inglesa, claridad textual, melodía inmediata y un gran cuidado por el equilibrio de las voces.",
+    listen: "En For the Beauty of the Earth escucha cómo la melodía fluye con naturalidad y cómo las voces se apoyan unas a otras sin perder claridad. La música transmite celebración y gratitud mediante una escritura directa, cálida y muy cantable.",
+    curiosity: "Además de componer, Rutter fundó los Cambridge Singers, conjunto con el que ha difundido ampliamente tanto su propia música como repertorio coral de distintas épocas."
+  },
+  whitacre: {
+    bio: "Compositor y director estadounidense, una de las figuras más conocidas de la música coral del siglo XXI. Su lenguaje combina armonías densas, gran sensibilidad tímbrica y una especial atención a la experiencia colectiva del sonido.",
+    legacy: "Whitacre ha explorado nuevas formas de entender el coro como espacio sonoro. Sus acordes de múltiples capas, sus resonancias suspendidas y sus proyectos de Virtual Choir han ampliado tanto el lenguaje coral como su alcance social y tecnológico.",
+    listen: "En Five Hebrew Love Songs escucha cómo las voces crean una atmósfera íntima y luminosa. Presta atención a los acordes que se forman lentamente y a la manera en que cada poema recibe un color distinto sin perder la unidad del conjunto.",
+    curiosity: "Whitacre impulsó el proyecto Virtual Choir, que reunió por internet miles de voces grabadas desde distintos países. La iniciativa mostró cómo la tecnología podía crear una nueva forma de experiencia coral compartida."
+  },
+  esenvalds: {
+    bio: "Compositor letón contemporáneo y una de las voces más destacadas de la nueva música coral báltica. Su escritura combina lirismo, riqueza armónica y una gran imaginación tímbrica.",
+    legacy: "Ešenvalds amplía la paleta coral mediante armonías muy resonantes, efectos espaciales y el uso ocasional de recursos poco habituales. Su música busca con frecuencia crear paisajes sonoros de gran impacto emocional.",
+    listen: "En Stars escucha cómo el coro parece convertirse en un cielo sonoro. Fíjate en las armonías suspendidas y en el uso de copas de cristal afinadas, que añaden un brillo casi etéreo alrededor de las voces.",
+    curiosity: "En varias obras, Ešenvalds utiliza elementos como copas de cristal, campanas u otros recursos tímbricos para extender el color del coro sin perder el protagonismo de la voz humana."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
