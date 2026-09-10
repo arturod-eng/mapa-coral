@@ -392,6 +392,30 @@ const extendedInfo = {
     legacy: "Pérotin amplió el organum hasta tres y cuatro voces. Con él, la polifonía dejó de ser solamente una voz añadida al canto y comenzó a convertirse en una arquitectura sonora de varias líneas coordinadas, uno de los grandes pasos hacia la escritura coral occidental.",
     listen: "En Viderunt omnes presta atención a la sensación de espacio creada por cuatro voces: el tenor mantiene notas prolongadas mientras las voces superiores tejen figuras rítmicas entre sí. Compararlo con Léonin permite oír, casi de inmediato, cuánto había crecido la polifonía.",
     curiosity: "Viderunt omnes y Sederunt principes figuran entre los ejemplos más célebres del organum a cuatro voces que han llegado hasta nosotros. Su monumentalidad sonora parece hecha a la medida de la nueva catedral gótica de Notre-Dame."
+  },
+  machaut: {
+    bio: "Poeta y compositor francés del siglo XIV, figura central del Ars Nova. Fue uno de los primeros grandes creadores de la historia occidental en dejar una obra extensa y cuidadosamente preservada bajo su propio nombre.",
+    legacy: "Su Messe de Nostre Dame es una de las primeras versiones completas del Ordinario de la misa concebidas como un ciclo polifónico por un solo compositor. En ella, las distintas secciones empiezan a sentirse como partes de una obra mayor y coherente.",
+    listen: "En la Messe de Nostre Dame escucha la densidad de las cuatro voces y el modo en que el ritmo organiza la polifonía. Frente a Léonin y Pérotin, la escritura ya no parece un experimento alrededor del canto llano: ahora posee una identidad formal mucho más definida.",
+    curiosity: "Machaut no fue solo músico: también fue uno de los poetas más célebres de su tiempo. En su obra, poesía y música forman dos caras de una misma personalidad artística."
+  },
+  josquin: {
+    bio: "Compositor franco-flamenco del Renacimiento, celebrado en toda Europa por la maestría con que trató las voces y el texto. Su prestigio fue tan grande que durante siglos muchas obras ajenas llegaron a circular bajo su nombre.",
+    legacy: "Josquin convirtió la imitación entre voces en un recurso de enorme claridad expresiva. Las entradas sucesivas de cada línea crean una conversación musical en la que el texto puede escucharse y comprenderse con una naturalidad nueva.",
+    listen: "En Il grillo escucha cómo las voces se imitan con gestos breves, ágiles y casi juguetones. Aunque es una pieza secular, permite percibir con gran claridad el dominio renacentista de la imitación y del equilibrio entre las partes.",
+    curiosity: "Su fama fue tan extraordinaria que el impresor Ottaviano Petrucci publicó en 1502 un volumen dedicado enteramente a sus misas, algo excepcional para un compositor vivo."
+  },
+  victoria: {
+    bio: "Sacerdote y compositor español del Renacimiento tardío, considerado una de las grandes figuras de la polifonía sacra. Desarrolló buena parte de su carrera entre Roma y España.",
+    legacy: "Victoria llevó el lenguaje polifónico renacentista hacia una expresión intensamente espiritual y dramática. Su escritura conserva la claridad y el equilibrio contrapuntístico, pero con una especial sensibilidad por la emoción del texto litúrgico.",
+    listen: "En O magnum mysterium observa cómo las entradas de las voces parecen surgir con serenidad y cómo la armonía se ilumina en momentos clave del texto. La música no busca exhibición: crea una atmósfera de asombro y contemplación.",
+    curiosity: "A diferencia de muchos compositores de su época, Victoria se dedicó casi exclusivamente a la música sacra. Esa concentración contribuye a la personalidad tan coherente y reconocible de su obra."
+  },
+  palestrina: {
+    bio: "Compositor italiano del Renacimiento y una de las figuras emblemáticas de la polifonía sacra. Trabajó durante gran parte de su vida en importantes instituciones musicales de Roma.",
+    legacy: "Su estilo se convirtió en modelo de equilibrio contrapuntístico, fluidez melódica y claridad vocal. Durante siglos, el llamado stile antico tomó su escritura como referencia para enseñar y comprender el contrapunto coral.",
+    listen: "En Sicut cervus escucha cómo cada voz entra con suavidad y cómo las líneas se entrelazan sin perder transparencia. El resultado parece continuo y sereno: ninguna voz domina, pero todas contribuyen a una sola arquitectura sonora.",
+    curiosity: "La tradición llegó a presentarlo como el compositor que 'salvó' la polifonía durante el Concilio de Trento. La historia real es mucho más compleja, pero la leyenda muestra hasta qué punto su música llegó a representar el ideal de claridad de la polifonía sacra."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
