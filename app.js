@@ -488,7 +488,30 @@ brahms: {
   legacy: "Brahms consiguió unir el rigor del contrapunto antiguo con la riqueza armónica y emocional del Romanticismo. Su música coral puede ser monumental, íntima o contemplativa, y constituye uno de los grandes puentes entre la tradición y la modernidad.",
   listen: "En Ein deutsches Requiem escucha cómo Brahms utiliza el coro no para describir la muerte de manera dramática, sino para ofrecer consuelo a quienes permanecen vivos. Presta atención a la extraordinaria relación entre las palabras y el color de la armonía.",
   curiosity: "A diferencia del réquiem litúrgico tradicional en latín, Brahms seleccionó personalmente textos de la Biblia en alemán. Por eso Ein deutsches Requiem es una obra profundamente espiritual, pero no una misa de difuntos convencional."
-}
+},  bruckner: {
+    bio: "Compositor austríaco del Romanticismo, profundamente ligado a la tradición católica y a la música sacra. Además de sus grandes sinfonías, escribió motetes y misas que muestran una extraordinaria comprensión de la sonoridad coral.",
+    legacy: "Bruckner une el lenguaje armónico romántico con una admiración profunda por la polifonía antigua. Sus coros alternan bloques sonoros de gran solemnidad con pasajes de transparencia casi renacentista, creando una sensación de espacio y elevación espiritual.",
+    listen: "En Ave Maria, WAB 6, escucha cómo las voces avanzan desde una textura contenida hacia sonoridades cada vez más amplias. Fíjate en los contrastes entre grupos de voces y en la manera en que la armonía parece abrir el espacio acústico.",
+    curiosity: "Bruckner era también un organista extraordinario y famoso improvisador. Su fascinación por las grandes resonancias del órgano dejó una huella perceptible en la manera monumental con que imaginaba muchas de sus sonoridades corales."
+  },
+  verdi: {
+    bio: "Compositor italiano del Romanticismo, célebre sobre todo por sus óperas. Sin embargo, su Messa da Requiem demuestra hasta qué punto supo trasladar al ámbito sacro toda su fuerza dramática y teatral.",
+    legacy: "Verdi convirtió el coro en una poderosa fuerza dramática. En su Requiem, la masa coral puede susurrar, suplicar, estallar o estremecer, y la escritura vocal adquiere una intensidad casi escénica sin dejar de conservar una profunda dimensión espiritual.",
+    listen: "En el Dies irae de la Messa da Requiem escucha el impacto inmediato del coro y la orquesta. Después compáralo con los pasajes más íntimos: el poder de la obra está tanto en la violencia de los contrastes como en la tensión que se mantiene incluso en los momentos silenciosos.",
+    curiosity: "El Requiem fue compuesto en memoria del escritor Alessandro Manzoni, a quien Verdi admiraba profundamente. Su lenguaje es tan teatral que a veces se ha descrito la obra, de manera provocadora, como una 'ópera con vestiduras eclesiásticas'."
+  },
+  faure: {
+    bio: "Compositor francés situado entre el Romanticismo tardío y la modernidad. Fue organista, profesor y más tarde director del Conservatorio de París, y desarrolló un lenguaje armónico refinado, elegante y muy personal.",
+    legacy: "Fauré transformó el género del réquiem al apartarse de la visión terrorífica del Juicio Final. Su Requiem busca serenidad, consuelo y luz, y utiliza el coro con una suavidad y una economía expresiva que influyeron profundamente en la música coral francesa posterior.",
+    listen: "En el In Paradisum del Requiem, escucha la ligereza de la textura y la sensación de suspensión. Las voces parecen flotar sobre una armonía luminosa: en lugar de dramatizar la muerte, Fauré conduce la música hacia una idea de descanso y paz.",
+    curiosity: "Fauré explicó que su Requiem no fue concebido como una obra dominada por el temor a la muerte, sino más bien por una visión de confianza y reposo. Esa intención se percibe claramente en el carácter general de la partitura."
+  },
+  debussy: {
+    bio: "Compositor francés y figura esencial de la modernidad musical. Su obra transformó profundamente el lenguaje armónico, el color instrumental y la manera de concebir el tiempo musical.",
+    legacy: "En su música coral, Debussy explora la voz como color, textura y atmósfera. En lugar de apoyarse en una progresión armónica tradicional, crea sonoridades móviles y ambiguas que anticipan muchas búsquedas del siglo XX.",
+    listen: "En Trois chansons de Charles d’Orléans escucha cómo las voces construyen una atmósfera más que una dirección dramática. Presta atención a los cambios sutiles de color, a los acordes inesperados y al modo en que el texto parece integrarse en una textura casi pictórica.",
+    curiosity: "Debussy rechazaba con frecuencia que se le llamara 'impresionista', aunque el término quedó asociado a su música. Su sensibilidad estaba muy vinculada a la poesía simbolista, la pintura y las artes visuales de su tiempo."
+  }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
 const bioText=document.getElementById("bioText"), legacyText=document.getElementById("legacyText");
