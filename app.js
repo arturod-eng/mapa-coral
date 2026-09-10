@@ -464,7 +464,31 @@ const extendedInfo = {
     legacy: "Con Beethoven, el coro pudo entrar en territorios hasta entonces poco habituales. El final de la Novena Sinfonía integra solistas y coro dentro de una sinfonía de dimensiones monumentales, abriendo una posibilidad que influiría profundamente en los compositores posteriores.",
     listen: "En el cuarto movimiento de la Novena escucha primero cómo aparece gradualmente el tema de la 'Oda a la alegría'. Cuando finalmente entran las voces, la melodía ya resulta familiar: Beethoven convierte ese reconocimiento en una poderosa sensación de comunidad y fraternidad.",
     curiosity: "En el estreno de la Novena, Beethoven estaba ya profundamente sordo. La tradición cuenta que, al terminar, una de las intérpretes tuvo que hacerlo girar para que pudiera ver los aplausos del público."
-  }
+      },
+  schubert: {
+  bio: "Compositor austríaco y una de las grandes figuras del primer Romanticismo. En su breve vida creó una obra extraordinariamente abundante, en la que la voz ocupa un lugar central. Además de sus célebres lieder, escribió misas, motetes y numerosas obras para conjuntos vocales.",
+  legacy: "Schubert llevó al coro la sensibilidad íntima y lírica propia del Romanticismo. Sus páginas corales combinan melodías de gran naturalidad con una armonía capaz de cambiar de luz y de emoción en pocos compases.",
+  listen: "En el Sanctus de la Misa en mi bemol mayor escucha cómo una idea inicialmente serena va creciendo hasta adquirir una amplitud casi sinfónica. Observa especialmente los contrastes entre momentos íntimos y grandes expansiones del coro.",
+  curiosity: "Schubert murió con apenas 31 años. A pesar de su corta vida dejó más de seiscientas canciones, además de sinfonías, música de cámara, obras para piano y una importante producción coral y religiosa."
+},
+mendelssohn: {
+  bio: "Compositor, pianista y director alemán, figura esencial del Romanticismo. Cultivó intensamente la música coral y tuvo además un papel decisivo en la recuperación de grandes obras del pasado, especialmente la música de Johann Sebastian Bach.",
+  legacy: "Mendelssohn renovó la tradición coral combinando la claridad contrapuntística heredada de Bach con el lirismo romántico. Sus oratorios y motetes ayudaron a devolver al coro un lugar central en la vida musical europea del siglo XIX.",
+  listen: "En Denn er hat seinen Engeln befohlen escucha la transparencia de las voces y la serenidad con que se despliega la armonía. Las frases parecen sostenerse unas a otras creando una sensación de protección y recogimiento.",
+  curiosity: "En 1829, con apenas veinte años, Mendelssohn dirigió en Berlín una histórica interpretación de la Pasión según San Mateo de Bach. El acontecimiento fue fundamental para el redescubrimiento moderno de la música de Bach."
+},
+schumann: {
+  bio: "Compositor alemán y una de las personalidades más representativas del Romanticismo. Aunque es especialmente conocido por su música para piano y sus canciones, también dedicó una parte importante de su producción a la música coral, tanto religiosa como secular.",
+  legacy: "Schumann trasladó al coro la intensidad emocional y el lenguaje poético característicos del Romanticismo. Sus obras corales exploran el color armónico y la relación entre música y palabra con una sensibilidad profundamente literaria.",
+  listen: "En Zigeunerleben escucha cómo Schumann utiliza cambios de dinámica, ritmo y textura para convertir al coro en narrador de una escena llena de movimiento. Las voces pasan rápidamente de la evocación al impulso casi teatral.",
+  curiosity: "Antes de decidirse plenamente por la música, Schumann dudó entre convertirse en músico o escritor. Esa pasión por la literatura permaneció durante toda su vida y explica en parte la extraordinaria atención que concedía al texto."
+},
+brahms: {
+  bio: "Compositor alemán del Romanticismo y uno de los grandes maestros de la escritura coral del siglo XIX. Profundo conocedor de la música antigua, estudió intensamente a Bach, Händel y los maestros del Renacimiento, integrando esa tradición en un lenguaje profundamente personal.",
+  legacy: "Brahms consiguió unir el rigor del contrapunto antiguo con la riqueza armónica y emocional del Romanticismo. Su música coral puede ser monumental, íntima o contemplativa, y constituye uno de los grandes puentes entre la tradición y la modernidad.",
+  listen: "En Ein deutsches Requiem escucha cómo Brahms utiliza el coro no para describir la muerte de manera dramática, sino para ofrecer consuelo a quienes permanecen vivos. Presta atención a la extraordinaria relación entre las palabras y el color de la armonía.",
+  curiosity: "A diferencia del réquiem litúrgico tradicional en latín, Brahms seleccionó personalmente textos de la Biblia en alemán. Por eso Ein deutsches Requiem es una obra profundamente espiritual, pero no una misa de difuntos convencional."
+}
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
 const bioText=document.getElementById("bioText"), legacyText=document.getElementById("legacyText");
