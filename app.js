@@ -373,12 +373,25 @@ function ratioMatches(descA, descB) {
   }
 }
 
+
 const extendedInfo = {
   hildegard: {
     bio: "Abadesa benedictina, compositora, poeta, escritora y visionaria. Fue una de las figuras intelectuales y artísticas más extraordinarias de la Europa medieval.",
     legacy: "Compuso música vocal destinada principalmente a su comunidad religiosa. Sus melodías poseen una libertad y una amplitud poco comunes en el canto litúrgico de su época, y utilizan la voz como vehículo de contemplación y expresión espiritual.",
     listen: "Observa cómo la melodía parece elevarse y descender libremente alrededor de las palabras. Todavía no estamos ante un coro polifónico como el de siglos posteriores: una misma línea melódica concentra toda la expresión.",
     curiosity: "Hildegard describía muchas de sus obras como nacidas de las visiones que experimentaba desde niña. Música, poesía, naturaleza, espiritualidad y conocimiento formaban para ella parte de un mismo universo."
+  },
+  leonin: {
+    bio: "Compositor francés asociado a la Escuela de Notre-Dame de París y uno de los primeros autores de polifonía cuyo nombre conocemos. La principal noticia sobre él procede del llamado Anónimo IV, un teórico medieval que lo elogió como maestro del organum.",
+    legacy: "A Léonin se le atribuye la organización del Magnus Liber Organi, una gran colección destinada al servicio litúrgico. Su música representa un momento decisivo: sobre el canto llano aparece una segunda voz elaborada, y la tradición coral occidental empieza a adquirir una verdadera dimensión polifónica.",
+    listen: "En Viderunt omnes escucha cómo una voz sostiene lentamente el canto gregoriano mientras otra se mueve con mucha mayor libertad por encima. Es como si una antigua línea de canto comenzara, por primera vez, a abrir espacio para otra voz independiente.",
+    curiosity: "Mucho de lo que sabemos de Léonin fue escrito décadas después de su actividad. Su figura está envuelta en cierta incertidumbre histórica, pero su nombre quedó ligado para siempre al gran laboratorio musical que fue Notre-Dame de París."
+  },
+  perotin: {
+    bio: "Compositor de la Escuela de Notre-Dame activo alrededor del cambio del siglo XII al XIII. Conocido como Perotinus Magnus, llevó mucho más lejos las técnicas polifónicas cultivadas por Léonin.",
+    legacy: "Pérotin amplió el organum hasta tres y cuatro voces. Con él, la polifonía dejó de ser solamente una voz añadida al canto y comenzó a convertirse en una arquitectura sonora de varias líneas coordinadas, uno de los grandes pasos hacia la escritura coral occidental.",
+    listen: "En Viderunt omnes presta atención a la sensación de espacio creada por cuatro voces: el tenor mantiene notas prolongadas mientras las voces superiores tejen figuras rítmicas entre sí. Compararlo con Léonin permite oír, casi de inmediato, cuánto había crecido la polifonía.",
+    curiosity: "Viderunt omnes y Sederunt principes figuran entre los ejemplos más célebres del organum a cuatro voces que han llegado hasta nosotros. Su monumentalidad sonora parece hecha a la medida de la nueva catedral gótica de Notre-Dame."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
