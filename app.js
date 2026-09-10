@@ -168,6 +168,70 @@ const people = {
     period: "IMPRESIONISMO / MODERNIDAD",
     work: "Trois chansons de Charles d’Orléans",
     listen: "https://www.youtube.com/results?search_query=Claude+Debussy+Trois+chansons+de+Charles+d+Orleans"
+  },
+
+  rachmaninoff: {
+    name: "Sergei Rachmaninoff",
+    dates: "1873–1943",
+    period: "ROMANTICISMO TARDÍO / SIGLO XX",
+    work: "Vísperas (Vigilia de toda la noche), Op. 37",
+    listen: "https://www.youtube.com/results?search_query=Rachmaninoff+All+Night+Vigil+Op+37"
+  },
+  stravinsky: {
+    name: "Igor Stravinsky",
+    dates: "1882–1971",
+    period: "SIGLO XX",
+    work: "Symphony of Psalms",
+    listen: "https://www.youtube.com/results?search_query=Stravinsky+Symphony+of+Psalms"
+  },
+  britten: {
+    name: "Benjamin Britten",
+    dates: "1913–1976",
+    period: "SIGLO XX",
+    work: "War Requiem, Op. 66",
+    listen: "https://www.youtube.com/results?search_query=Benjamin+Britten+War+Requiem+Op+66"
+  },
+  poulenc: {
+    name: "Francis Poulenc",
+    dates: "1899–1963",
+    period: "SIGLO XX",
+    work: "Gloria, FP 177",
+    listen: "https://www.youtube.com/results?search_query=Francis+Poulenc+Gloria+FP+177"
+  },
+  messiaen: {
+    name: "Olivier Messiaen",
+    dates: "1908–1992",
+    period: "SIGLO XX",
+    work: "Cinq rechants",
+    listen: "https://www.youtube.com/results?search_query=Olivier+Messiaen+Cinq+rechants"
+  },
+  part: {
+    name: "Arvo Pärt",
+    dates: "1935–",
+    period: "CONTEMPORÁNEA",
+    work: "Te Deum",
+    listen: "https://www.youtube.com/results?search_query=Arvo+Part+Te+Deum"
+  },
+  lauridsen: {
+    name: "Morten Lauridsen",
+    dates: "1943–",
+    period: "CONTEMPORÁNEA",
+    work: "O Magnum Mysterium",
+    listen: "https://www.youtube.com/results?search_query=Morten+Lauridsen+O+Magnum+Mysterium"
+  },
+  whitacre: {
+    name: "Eric Whitacre",
+    dates: "1970–",
+    period: "CONTEMPORÁNEA",
+    work: "Five Hebrew Love Songs",
+    listen: "https://www.youtube.com/results?search_query=Eric+Whitacre+Five+Hebrew+Love+Songs"
+  },
+  esenvalds: {
+    name: "Ēriks Ešenvalds",
+    dates: "1977–",
+    period: "CONTEMPORÁNEA",
+    work: "Stars",
+    listen: "https://www.youtube.com/results?search_query=Eriks+Esenvalds+Stars"
   }
 };
 
@@ -261,7 +325,7 @@ function orbFromMat(src, maxSide = 520) {
 }
 
 async function buildReferences() {
-  statusEl.textContent = "Preparando los 24 compositores…";
+  statusEl.textContent = "Preparando los 33 compositores…";
 
   for (const id of ids) {
     const img = document.getElementById("ref-" + id);
@@ -451,7 +515,7 @@ async function startMagic() {
 
     startScreen.style.display = "none";
     running = true;
-    statusEl.textContent = "Apunta a uno de los 24 compositores";
+    statusEl.textContent = "Apunta a uno de los 33 compositores";
 
     setInterval(analyseFrame, 650);
 
@@ -465,4 +529,4 @@ async function startMagic() {
 }
 
 goBtn.onclick = startMagic;
-statusEl.textContent = "Mapa Coral 03f · 24 compositores listo";
+statusEl.textContent = "Mapa Coral 03g · 33 compositores listo";
