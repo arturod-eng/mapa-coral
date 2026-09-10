@@ -373,7 +373,24 @@ function ratioMatches(descA, descB) {
   }
 }
 
-function showCard(id) {
+const extendedInfo = {
+  hildegard: {
+    bio: "Abadesa benedictina, compositora, poeta, escritora y visionaria. Fue una de las figuras intelectuales y artísticas más extraordinarias de la Europa medieval.",
+    legacy: "Compuso música vocal destinada principalmente a su comunidad religiosa. Sus melodías poseen una libertad y una amplitud poco comunes en el canto litúrgico de su época, y utilizan la voz como vehículo de contemplación y expresión espiritual.",
+    listen: "Observa cómo la melodía parece elevarse y descender libremente alrededor de las palabras. Todavía no estamos ante un coro polifónico como el de siglos posteriores: una misma línea melódica concentra toda la expresión.",
+    curiosity: "Hildegard describía muchas de sus obras como nacidas de las visiones que experimentaba desde niña. Música, poesía, naturaleza, espiritualidad y conocimiento formaban para ella parte de un mismo universo."
+  }
+};
+const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
+const bioText=document.getElementById("bioText"), legacyText=document.getElementById("legacyText");
+const listenText=document.getElementById("listenText"), curiosityText=document.getElementById("curiosityText");
+moreBtn.onclick=()=>{const opening=moreInfo.classList.contains("hidden");moreInfo.classList.toggle("hidden");moreBtn.textContent=opening?"− VER MENOS":"＋ SABER MÁS";};
+function populateExtendedInfo(id){
+ const x=extendedInfo[id];
+ if(x){bioText.textContent=x.bio;legacyText.textContent=x.legacy;listenText.textContent=x.listen;curiosityText.textContent=x.curiosity;moreBtn.style.display="";}
+ else{bioText.textContent=legacyText.textContent=listenText.textContent=curiosityText.textContent="";moreBtn.style.display="none";}
+ moreInfo.classList.add("hidden");moreBtn.textContent="＋ SABER MÁS";
+}function showCard(id) {
   const p = people[id];
   if (!p) return;
 
@@ -382,7 +399,7 @@ function showCard(id) {
   datesEl.textContent = p.dates;
   workEl.textContent = p.work;
   listenEl.href = p.listen;
-
+populateExtendedInfo(id);
   card.classList.remove("hidden");
   lastShown = id;
 }
