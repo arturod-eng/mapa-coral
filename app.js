@@ -1,14 +1,41 @@
-const people={"hildegard":{"name":"Hildegard von Bingen","dates":"1098–1179","period":"EDAD MEDIA","work":"O vis aeternitatis","url":"https://www.youtube.com/results?search_query=Hildegard+von+Bingen+O+vis+aeternitatis"},"leonin":{"name":"Léonin","dates":"c. 1150–c. 1201","period":"EDAD MEDIA","work":"Viderunt omnes","url":"https://www.youtube.com/results?search_query=Léonin+Viderunt+omnes"},"perotin":{"name":"Pérotin","dates":"c. 1160–c. 1230","period":"EDAD MEDIA","work":"Viderunt omnes","url":"https://www.youtube.com/results?search_query=Pérotin+Viderunt+omnes"},"machaut":{"name":"Guillaume de Machaut","dates":"c. 1300–1377","period":"EDAD MEDIA","work":"Messe de Nostre Dame","url":"https://www.youtube.com/results?search_query=Machaut+Messe+de+Nostre+Dame"},"josquin":{"name":"Josquin des Prez","dates":"c. 1450/55–1521","period":"RENACIMIENTO","work":"Il grillo (El grillo)","url":"https://www.youtube.com/results?search_query=Josquin+des+Prez+Il+grillo"},"victoria":{"name":"Tomás Luis de Victoria","dates":"c. 1548–1611","period":"RENACIMIENTO","work":"O magnum mysterium","url":"https://www.youtube.com/results?search_query=Victoria+O+magnum+mysterium"},"palestrina":{"name":"Giovanni Pierluigi da Palestrina","dates":"c. 1525–1594","period":"RENACIMIENTO · DIRECTOR","work":"Sicut cervus","url":"https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus"},"rutter":{"name":"John Rutter","dates":"1945–","period":"CONTEMPORÁNEA","work":"For the Beauty of the Earth","url":"https://www.youtube.com/results?search_query=John+Rutter+For+the+Beauty+of+the+Earth"}};
+const goBtn=document.getElementById("go");
+const statusEl=document.getElementById("status");
+const startScreen=document.getElementById("startscreen");
+const video=document.getElementById("video");
 
-const video=document.getElementById("video"),canvas=document.getElementById("canvas"),ctx=canvas.getContext("2d"),statusEl=document.getElementById("status"),card=document.getElementById("card"),goBtn=document.getElementById("go"),startScreen=document.getElementById("startscreen"),periodEl=document.getElementById("period"),nameEl=document.getElementById("name"),datesEl=document.getElementById("dates"),workEl=document.getElementById("work"),listenEl=document.getElementById("listen");
-let refs=[],running=false,lastHit=0,stableKey=null,stableCount=0;
+async function startDiagnostic(){
+  goBtn.textContent="Botón funciona ✅";
+  statusEl.textContent="Paso 1: botón detectado";
+  goBtn.disabled=true;
 
-function waitCV(){return new Promise((resolve,reject)=>{let waited=0;const t=setInterval(()=>{waited+=100;if(window.cvReady&&window.cv&&cv.Mat&&cv.ORB){clearInterval(t);resolve()}else if(waited>15000){clearInterval(t);reject(new Error("OpenCV no terminó de cargar."))}},100)})}
-function showCard(key,score){const p=people[key];periodEl.textContent=p.period;nameEl.textContent=p.name;datesEl.textContent=p.dates;workEl.textContent=p.work;listenEl.href=p.url;card.classList.remove("hidden");statusEl.textContent="✓ Reconocido · "+Math.round(score*100)+"%";lastHit=Date.now()}
-function features(gray){const orb=new cv.ORB(1100),kp=new cv.KeyPointVector(),des=new cv.Mat(),mask=new cv.Mat();orb.detectAndCompute(gray,mask,kp,des);mask.delete();orb.delete();return{kp,des}}
-async function buildRefs(){refs=[];for(const key of Object.keys(people)){const src=cv.imread("ref-"+key),g=new cv.Mat();cv.cvtColor(src,g,cv.COLOR_RGBA2GRAY);const r=new cv.Mat(),w=420,h=Math.round(g.rows*w/g.cols);cv.resize(g,r,new cv.Size(w,h),0,0,cv.INTER_AREA);const f=features(r);refs.push({key,des:f.des,kp:f.kp});src.delete();g.delete();r.delete()}}
-async function startMagic(){goBtn.disabled=true;statusEl.textContent="Solicitando cámara…";try{const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"},width:{ideal:1280},height:{ideal:720}},audio:false});video.srcObject=stream;await video.play();await waitCV();await buildRefs();startScreen.style.display="none";running=true;scan()}catch(e){statusEl.textContent="No pude iniciar la cámara";goBtn.disabled=false;alert("No pude abrir la cámara.\n\n"+e.message)}}
-goBtn.addEventListener("click",startMagic);
+  await new Promise(r=>setTimeout(r,500));
 
-function compare(fd,rd){if(fd.empty()||rd.empty())return{good:0,score:0};const m=new cv.BFMatcher(cv.NORM_HAMMING,false),v=new cv.DMatchVector();m.match(rd,fd,v);const ds=[];for(let i=0;i<v.size();i++)ds.push(v.get(i).distance);v.delete();m.delete();ds.sort((a,b)=>a-b);const good=ds.filter(d=>d<48).length,top=ds.slice(0,Math.min(24,ds.length)),avg=top.length?top.reduce((a,b)=>a+b,0)/top.length:100,quality=Math.max(0,Math.min(1,(70-avg)/45)),count=Math.max(0,Math.min(1,(good-5)/22));return{good,score:.58*quality+.42*count}}
-function scan(){if(!running)return;const vw=720,vh=Math.round(720*video.videoHeight/video.videoWidth);canvas.width=vw;canvas.height=vh;ctx.drawImage(video,0,0,vw,vh);const rgba=cv.imread(canvas),g=new cv.Mat();cv.cvtColor(rgba,g,cv.COLOR_RGBA2GRAY);rgba.delete();const rx=Math.round(g.cols*.09),ry=Math.round(g.rows*.09),rw=Math.round(g.cols*.82),rh=Math.round(g.rows*.82),roi=g.roi(new cv.Rect(rx,ry,rw,rh)),small=new cv.Mat(),fw=560,fh=Math.round(roi.rows*fw/roi.cols);cv.resize(roi,small,new cv.Size(fw,fh),0,0,cv.INTER_AREA);roi.delete();g.delete();const f=features(small);small.delete();const scores=refs.map(r=>({key:r.key,...compare(f.des,r.des)})).sort((a,b)=>b.score-a.score);f.des.delete();f.kp.delete();const best=scores[0],second=scores[1],ok=best.good>=11&&best.score>=.43&&(best.score-second.score)>=.075;ctx.clearRect(0,0,canvas.width,canvas.height);if(ok){if(stableKey===best.key)stableCount++;else{stableKey=best.key;stableCount=1}statusEl.textContent=`Verificando ${people[best.key].name}… ${stableCount}/2`;if(stableCount>=2)showCard(best.key,best.score)}else{stableKey=null;stableCount=0;statusEl.textContent="Acerca un retrato al centro · buscando…";if(Date.now()-lastHit>1600)card.classList.add("hidden")}setTimeout(scan,700)}
+  try{
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+      statusEl.textContent="Paso 2: cámara NO disponible";
+      alert("El botón funciona, pero este navegador no expone getUserMedia.");
+      goBtn.disabled=false;
+      return;
+    }
+
+    statusEl.textContent="Paso 2: solicitando cámara…";
+    const stream=await navigator.mediaDevices.getUserMedia({
+      video:{facingMode:{ideal:"environment"}},
+      audio:false
+    });
+
+    statusEl.textContent="Paso 3: cámara concedida ✅";
+    video.srcObject=stream;
+    await video.play();
+
+    startScreen.style.display="none";
+    statusEl.textContent="Diagnóstico correcto: botón + cámara ✅";
+  }catch(e){
+    statusEl.textContent="Paso 3: error de cámara";
+    alert("El botón sí funciona. El error está al abrir la cámara:\n\n"+e.name+": "+e.message);
+    goBtn.disabled=false;
+  }
+}
+
+goBtn.addEventListener("click",startDiagnostic);
+statusEl.textContent="Diagnóstico 03c listo";
