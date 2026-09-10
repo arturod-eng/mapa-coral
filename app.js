@@ -37,5 +37,5 @@ async function startDiagnostic(){
   }
 }
 
-goBtn.addEventListener("click",startDiagnostic);
+goBtn.onclick=()=>alert("BOTÓN DETECTADO");
 statusEl.textContent="Diagnóstico 03c listo";
