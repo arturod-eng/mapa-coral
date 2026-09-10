@@ -111,6 +111,63 @@ const people = {
     period: "CLASICISMO / ROMANTICISMO",
     work: "Missa solemnis",
     listen: "https://www.youtube.com/results?search_query=Beethoven+Missa+solemnis"
+  },
+
+  schubert: {
+    name: "Franz Schubert",
+    dates: "1797–1828",
+    period: "ROMANTICISMO",
+    work: "Misa n.º 6 en mi bemol mayor, D 950",
+    listen: "https://www.youtube.com/results?search_query=Franz+Schubert+Mass+No+6+D+950"
+  },
+  mendelssohn: {
+    name: "Felix Mendelssohn",
+    dates: "1809–1847",
+    period: "ROMANTICISMO",
+    work: "Elijah (Elias), Op. 70",
+    listen: "https://www.youtube.com/results?search_query=Felix+Mendelssohn+Elijah+Op+70"
+  },
+  schumann: {
+    name: "Robert Schumann",
+    dates: "1810–1856",
+    period: "ROMANTICISMO",
+    work: "Das Paradies und die Peri, Op. 50",
+    listen: "https://www.youtube.com/results?search_query=Robert+Schumann+Das+Paradies+und+die+Peri+Op+50"
+  },
+  brahms: {
+    name: "Johannes Brahms",
+    dates: "1833–1897",
+    period: "ROMANTICISMO",
+    work: "Ein deutsches Requiem, Op. 45",
+    listen: "https://www.youtube.com/results?search_query=Johannes+Brahms+Ein+deutsches+Requiem+Op+45"
+  },
+  bruckner: {
+    name: "Anton Bruckner",
+    dates: "1824–1896",
+    period: "ROMANTICISMO",
+    work: "Ave Maria, WAB 6",
+    listen: "https://www.youtube.com/results?search_query=Anton+Bruckner+Ave+Maria+WAB+6"
+  },
+  verdi: {
+    name: "Giuseppe Verdi",
+    dates: "1813–1901",
+    period: "ROMANTICISMO",
+    work: "Messa da Requiem",
+    listen: "https://www.youtube.com/results?search_query=Giuseppe+Verdi+Messa+da+Requiem"
+  },
+  faure: {
+    name: "Gabriel Fauré",
+    dates: "1845–1924",
+    period: "ROMANTICISMO / MODERNIDAD",
+    work: "Requiem, Op. 48",
+    listen: "https://www.youtube.com/results?search_query=Gabriel+Faure+Requiem+Op+48"
+  },
+  debussy: {
+    name: "Claude Debussy",
+    dates: "1862–1918",
+    period: "IMPRESIONISMO / MODERNIDAD",
+    work: "Trois chansons de Charles d’Orléans",
+    listen: "https://www.youtube.com/results?search_query=Claude+Debussy+Trois+chansons+de+Charles+d+Orleans"
   }
 };
 
@@ -204,7 +261,7 @@ function orbFromMat(src, maxSide = 520) {
 }
 
 async function buildReferences() {
-  statusEl.textContent = "Preparando los 16 compositores…";
+  statusEl.textContent = "Preparando los 24 compositores…";
 
   for (const id of ids) {
     const img = document.getElementById("ref-" + id);
@@ -394,7 +451,7 @@ async function startMagic() {
 
     startScreen.style.display = "none";
     running = true;
-    statusEl.textContent = "Apunta a uno de los 16 compositores";
+    statusEl.textContent = "Apunta a uno de los 24 compositores";
 
     setInterval(analyseFrame, 650);
 
@@ -408,4 +465,4 @@ async function startMagic() {
 }
 
 goBtn.onclick = startMagic;
-statusEl.textContent = "Mapa Coral 03e · 16 compositores listo";
+statusEl.textContent = "Mapa Coral 03f · 24 compositores listo";
