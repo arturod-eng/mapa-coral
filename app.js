@@ -416,6 +416,30 @@ const extendedInfo = {
     legacy: "Su estilo se convirtió en modelo de equilibrio contrapuntístico, fluidez melódica y claridad vocal. Durante siglos, el llamado stile antico tomó su escritura como referencia para enseñar y comprender el contrapunto coral.",
     listen: "En Sicut cervus escucha cómo cada voz entra con suavidad y cómo las líneas se entrelazan sin perder transparencia. El resultado parece continuo y sereno: ninguna voz domina, pero todas contribuyen a una sola arquitectura sonora.",
     curiosity: "La tradición llegó a presentarlo como el compositor que 'salvó' la polifonía durante el Concilio de Trento. La historia real es mucho más compleja, pero la leyenda muestra hasta qué punto su música llegó a representar el ideal de claridad de la polifonía sacra."
+  },
+  monteverdi: {
+    bio: "Compositor italiano situado en el gran puente entre Renacimiento y Barroco. Trabajó primero en Mantua y más tarde en Venecia, donde fue maestro de capilla de San Marcos.",
+    legacy: "Monteverdi transformó la escritura vocal al colocar la expresión del texto en el centro. En sus obras sacras conviven la antigua polifonía renacentista y el nuevo lenguaje concertante barroco, con contrastes de masas, solistas e instrumentos.",
+    listen: "En el Vespro della Beata Vergine escucha los cambios de escala: momentos íntimos alternan con sonoridades monumentales. Fíjate también en cómo las voces dialogan con los instrumentos y cómo el espacio parece convertirse en parte de la música.",
+    curiosity: "Monteverdi defendió una 'seconda pratica' en la que las reglas podían ceder ante las necesidades expresivas del texto. Esa idea provocó una de las polémicas musicales más célebres de su tiempo."
+  },
+  schutz: {
+    bio: "Compositor alemán del primer Barroco y una figura esencial en la formación de la tradición coral germánica. Estudió en Venecia y asimiló profundamente el lenguaje italiano.",
+    legacy: "Schütz llevó a tierras alemanas la expresividad y el sentido espacial aprendidos en Italia. Sus obras muestran cómo el texto bíblico puede convertirse en drama sonoro mediante contrastes de voces, grupos y colores tímbricos.",
+    listen: "En Musikalische Exequien escucha la claridad con que las palabras organizan la música. Observa cómo los grupos vocales cambian de textura y cómo la obra combina recogimiento, retórica y una extraordinaria sensación de arquitectura espiritual.",
+    curiosity: "Schütz estudió con Giovanni Gabrieli en Venecia. Ese contacto directo con la tradición policoral de San Marcos dejó una huella profunda en su manera de pensar el espacio y las voces."
+  },
+  bach: {
+    bio: "Compositor alemán del Barroco tardío y una de las cumbres de la historia de la música occidental. Su actividad estuvo estrechamente ligada a la iglesia, la enseñanza y la vida musical de Leipzig.",
+    legacy: "Bach llevó la escritura coral a una síntesis extraordinaria de contrapunto, armonía, retórica y teología musical. En sus coros cada voz posee independencia, pero todas participan de una construcción de enorme coherencia.",
+    listen: "En la Misa en si menor presta atención a cómo el coro puede pasar de una textura contrapuntística muy densa a momentos de gran claridad homofónica. Escucha también cómo una idea musical puede viajar de voz en voz sin perder dirección.",
+    curiosity: "La Misa en si menor no nació como una obra compuesta de principio a fin en un solo momento: Bach reunió y reelaboró música escrita a lo largo de muchos años para crear la gran versión que conocemos."
+  },
+  handel: {
+    bio: "Compositor nacido en Alemania y establecido en Londres, donde desarrolló buena parte de su carrera. Fue maestro de la ópera y, más tarde, del oratorio inglés.",
+    legacy: "Händel convirtió el coro en protagonista dramático. En sus oratorios, la masa coral puede representar pueblos, multitudes, creyentes o comentaristas de la acción, combinando monumentalidad, claridad y una enorme eficacia teatral.",
+    listen: "En Messiah escucha cómo el coro alterna pasajes fugados con grandes acordes colectivos. Fíjate en la capacidad de Händel para hacer que una idea sencilla crezca hasta producir una sensación de celebración pública.",
+    curiosity: "El célebre Hallelujah pertenece a Messiah, pero la costumbre de ponerse de pie durante su interpretación se asocia a una tradición posterior vinculada, según la leyenda, al rey Jorge II."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
