@@ -511,6 +511,35 @@ brahms: {
     legacy: "En su música coral, Debussy explora la voz como color, textura y atmósfera. En lugar de apoyarse en una progresión armónica tradicional, crea sonoridades móviles y ambiguas que anticipan muchas búsquedas del siglo XX.",
     listen: "En Trois chansons de Charles d’Orléans escucha cómo las voces construyen una atmósfera más que una dirección dramática. Presta atención a los cambios sutiles de color, a los acordes inesperados y al modo en que el texto parece integrarse en una textura casi pictórica.",
     curiosity: "Debussy rechazaba con frecuencia que se le llamara 'impresionista', aunque el término quedó asociado a su música. Su sensibilidad estaba muy vinculada a la poesía simbolista, la pintura y las artes visuales de su tiempo."
+  },  rachmaninoff: {
+    bio: "Compositor, pianista y director ruso, heredero del gran Romanticismo y al mismo tiempo figura del siglo XX. Su lenguaje combina una intensa expresividad melódica con una escritura armónica de enorme riqueza.",
+    legacy: "En su música coral, Rachmaninoff llevó la tradición ortodoxa rusa a una profundidad sonora extraordinaria. Sus coros exploran registros graves, acordes amplios y una espiritualidad sustentada casi por completo en la voz humana.",
+    listen: "En la Vigilia de toda la noche, Op. 37, escucha especialmente la profundidad de los bajos y la manera en que el coro puede crear una sonoridad casi orquestal sin instrumentos. El efecto nace del color, la respiración conjunta y el espacio armónico.",
+    curiosity: "Rachmaninoff consideraba la Vigilia de toda la noche una de sus obras más queridas. Algunos de sus movimientos favoritos fueron interpretados en su funeral."
+  },
+  stravinsky: {
+    bio: "Compositor ruso y una de las figuras decisivas del siglo XX. A lo largo de su vida atravesó distintas etapas estilísticas, desde el modernismo rítmico de sus ballets hasta el neoclasicismo y, más tarde, el serialismo.",
+    legacy: "Stravinsky renovó profundamente la escritura coral al tratar las voces como parte de una arquitectura rítmica y tímbrica. En sus obras, el coro puede sonar austero, monumental y casi escultórico, lejos del lirismo romántico.",
+    listen: "En Symphony of Psalms escucha cómo el coro y la orquesta parecen construidos con bloques de sonido. Presta atención al peso del ritmo, a las repeticiones y a la ausencia de una sentimentalidad romántica tradicional.",
+    curiosity: "Stravinsky compuso Symphony of Psalms para el 50 aniversario de la Orquesta Sinfónica de Boston. La obra utiliza una orquesta inusual en la que, por ejemplo, no aparecen violines ni violas."
+  },
+  britten: {
+    bio: "Compositor británico del siglo XX, director y pianista. Tuvo una relación especialmente intensa con la voz y escribió óperas, canciones, obras para coro infantil y grandes partituras corales.",
+    legacy: "Britten devolvió al coro una enorme fuerza dramática y narrativa. Su escritura combina claridad textual, tensión armónica y una gran sensibilidad para diferenciar grupos vocales, edades y espacios sonoros.",
+    listen: "En War Requiem escucha el contraste entre el gran coro litúrgico y las voces solistas que cantan poemas de Wilfred Owen. Britten hace convivir dos mundos: el rito colectivo y el testimonio humano de la guerra.",
+    curiosity: "War Requiem fue escrito para la consagración de la nueva catedral de Coventry, construida junto a las ruinas de la antigua catedral destruida durante la Segunda Guerra Mundial."
+  },
+  poulenc: {
+    bio: "Compositor francés del siglo XX y miembro del grupo conocido como Les Six. Su música combina ironía, elegancia, sencillez aparente y, en sus obras religiosas, una espiritualidad profundamente personal.",
+    legacy: "Poulenc dio a la música coral sacra un lenguaje moderno sin perder claridad ni expresividad directa. Sus obras alternan armonías luminosas, bruscos contrastes y momentos de recogimiento de gran intensidad.",
+    listen: "En Gloria escucha cómo conviven lo solemne y lo juguetón. Algunos pasajes parecen casi teatrales, mientras otros se vuelven íntimos y contemplativos. Esa mezcla de devoción y vitalidad es muy característica de Poulenc.",
+    curiosity: "Tras una etapa de juventud más irreverente, Poulenc experimentó un renovado interés religioso en la década de 1930, y a partir de entonces escribió varias de sus obras sacras más importantes."
+  },
+  messiaen: {
+    bio: "Compositor francés del siglo XX, organista, profesor y pensador musical. Su obra está marcada por su fe católica, su fascinación por el ritmo y su estudio minucioso del canto de los pájaros.",
+    legacy: "Messiaen amplió radicalmente las posibilidades del lenguaje coral mediante ritmos complejos, modos propios y sonoridades de gran intensidad espiritual. Sus obras vocales no buscan continuidad tradicional, sino experiencias de color, tiempo y contemplación.",
+    listen: "En Cinq rechants escucha cómo las voces funcionan a veces como lenguaje, a veces como ritmo y a veces como pura materia sonora. Presta atención a las sílabas inventadas y a la sensación de que el tiempo musical se expande y se contrae.",
+    curiosity: "Messiaen transcribió durante años cantos de aves y los incorporó a numerosas composiciones. Para él, los pájaros eran grandes músicos de la naturaleza y una fuente inagotable de inspiración."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
