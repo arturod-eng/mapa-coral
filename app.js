@@ -54,6 +54,63 @@ const people = {
     period: "CONTEMPORÁNEA",
     work: "For the Beauty of the Earth",
     listen: "https://www.youtube.com/results?search_query=John+Rutter+For+the+Beauty+of+the+Earth"
+  },
+
+  monteverdi: {
+    name: "Claudio Monteverdi",
+    dates: "1567–1643",
+    period: "RENACIMIENTO / BARROCO",
+    work: "Vespro della Beata Vergine",
+    listen: "https://www.youtube.com/results?search_query=Claudio+Monteverdi+Vespro+della+Beata+Vergine"
+  },
+  schutz: {
+    name: "Heinrich Schütz",
+    dates: "1585–1672",
+    period: "BARROCO",
+    work: "Musikalische Exequien",
+    listen: "https://www.youtube.com/results?search_query=Heinrich+Schutz+Musikalische+Exequien"
+  },
+  bach: {
+    name: "Johann Sebastian Bach",
+    dates: "1685–1750",
+    period: "BARROCO",
+    work: "Misa en si menor",
+    listen: "https://www.youtube.com/results?search_query=Johann+Sebastian+Bach+Mass+in+B+minor"
+  },
+  handel: {
+    name: "Georg Friedrich Händel",
+    dates: "1685–1759",
+    period: "BARROCO",
+    work: "Messiah",
+    listen: "https://www.youtube.com/results?search_query=Handel+Messiah"
+  },
+  vivaldi: {
+    name: "Antonio Vivaldi",
+    dates: "1678–1741",
+    period: "BARROCO",
+    work: "Gloria, RV 589",
+    listen: "https://www.youtube.com/results?search_query=Vivaldi+Gloria+RV+589"
+  },
+  haydn: {
+    name: "Joseph Haydn",
+    dates: "1732–1809",
+    period: "CLASICISMO",
+    work: "La Creación",
+    listen: "https://www.youtube.com/results?search_query=Joseph+Haydn+The+Creation"
+  },
+  mozart: {
+    name: "Wolfgang Amadeus Mozart",
+    dates: "1756–1791",
+    period: "CLASICISMO",
+    work: "Réquiem, K. 626",
+    listen: "https://www.youtube.com/results?search_query=Mozart+Requiem+K+626"
+  },
+  beethoven: {
+    name: "Ludwig van Beethoven",
+    dates: "1770–1827",
+    period: "CLASICISMO / ROMANTICISMO",
+    work: "Missa solemnis",
+    listen: "https://www.youtube.com/results?search_query=Beethoven+Missa+solemnis"
   }
 };
 
@@ -147,7 +204,7 @@ function orbFromMat(src, maxSide = 520) {
 }
 
 async function buildReferences() {
-  statusEl.textContent = "Preparando los 8 compositores…";
+  statusEl.textContent = "Preparando los 16 compositores…";
 
   for (const id of ids) {
     const img = document.getElementById("ref-" + id);
@@ -337,7 +394,7 @@ async function startMagic() {
 
     startScreen.style.display = "none";
     running = true;
-    statusEl.textContent = "Apunta a uno de los 8 compositores";
+    statusEl.textContent = "Apunta a uno de los 16 compositores";
 
     setInterval(analyseFrame, 650);
 
@@ -351,4 +408,4 @@ async function startMagic() {
 }
 
 goBtn.onclick = startMagic;
-statusEl.textContent = "Mapa Coral 03d listo";
+statusEl.textContent = "Mapa Coral 03e · 16 compositores listo";
