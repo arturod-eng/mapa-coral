@@ -440,6 +440,30 @@ const extendedInfo = {
     legacy: "Händel convirtió el coro en protagonista dramático. En sus oratorios, la masa coral puede representar pueblos, multitudes, creyentes o comentaristas de la acción, combinando monumentalidad, claridad y una enorme eficacia teatral.",
     listen: "En Messiah escucha cómo el coro alterna pasajes fugados con grandes acordes colectivos. Fíjate en la capacidad de Händel para hacer que una idea sencilla crezca hasta producir una sensación de celebración pública.",
     curiosity: "El célebre Hallelujah pertenece a Messiah, pero la costumbre de ponerse de pie durante su interpretación se asocia a una tradición posterior vinculada, según la leyenda, al rey Jorge II."
+  },
+    vivaldi: {
+    bio: "Sacerdote, violinista y compositor veneciano del Barroco, conocido como el 'Prete Rosso'. Aunque hoy se le recuerda especialmente por sus conciertos, escribió también una importante producción de música sacra.",
+    legacy: "En su música coral, Vivaldi trasladó al ámbito vocal la energía rítmica, el contraste y el brillo instrumental característicos de su estilo. Sus coros pueden alternar solemnidad, impulso teatral y una luminosidad sonora inmediatamente reconocible.",
+    listen: "En Gloria RV 589 escucha el comienzo: el coro entra con una energía casi instrumental, apoyado por ritmos muy definidos. Después compara ese esplendor con los movimientos más íntimos; el contraste es una de las claves expresivas de la obra.",
+    curiosity: "Buena parte de la música sacra de Vivaldi estuvo vinculada al Ospedale della Pietà de Venecia, institución célebre por la extraordinaria formación musical de las jóvenes que vivían allí."
+  },
+  haydn: {
+    bio: "Compositor austríaco y figura fundamental del Clasicismo. Tras décadas al servicio de la familia Esterházy, alcanzó enorme prestigio internacional y en sus últimos años creó algunas de sus obras corales más ambiciosas.",
+    legacy: "Haydn dio al oratorio clásico una escala monumental sin perder claridad. En sus grandes obras corales, el coro participa tanto en la narración como en la celebración colectiva, dentro de una arquitectura equilibrada y llena de contrastes.",
+    listen: "En La Creación escucha el pasaje que conduce a 'Y se hizo la luz': Haydn prepara la llegada de la palabra 'Licht' con una tensión extraordinaria y la resuelve en una explosión sonora del coro y la orquesta. Es uno de los grandes efectos dramáticos del repertorio coral.",
+    curiosity: "La Creación estuvo inspirada en parte por los grandes oratorios de Händel que Haydn escuchó durante sus viajes a Londres. Aquella experiencia contribuyó decisivamente a su deseo de escribir un oratorio de gran formato."
+  },
+  mozart: {
+    bio: "Compositor austríaco del Clasicismo y una de las figuras centrales de la música occidental. Desde niño estuvo familiarizado con la música religiosa y a lo largo de su vida escribió misas, motetes, vísperas y otras obras para voces y orquesta.",
+    legacy: "Mozart reunió tradición contrapuntística, claridad clásica y una extraordinaria sensibilidad teatral. En su escritura coral, el texto litúrgico puede adquirir una intensidad casi operística sin perder nobleza ni equilibrio formal.",
+    listen: "En el Réquiem presta atención al contraste entre la gravedad del Introitus y la fuerza rítmica del Dies irae. En el Lacrimosa, escucha cómo las frases parecen avanzar con dificultad y crecer poco a poco hasta alcanzar una intensa expresión de duelo.",
+    curiosity: "Mozart murió antes de terminar el Réquiem. La obra fue completada principalmente por su discípulo Franz Xaver Süssmayr, circunstancia que alimentó durante generaciones leyendas y debates sobre qué partes proceden directamente de Mozart."
+  },
+  beethoven: {
+    bio: "Compositor alemán situado entre el Clasicismo y el Romanticismo. Transformó profundamente las formas heredadas y convirtió la experiencia musical en una expresión de enorme fuerza personal, ética y universal.",
+    legacy: "Con Beethoven, el coro pudo entrar en territorios hasta entonces poco habituales. El final de la Novena Sinfonía integra solistas y coro dentro de una sinfonía de dimensiones monumentales, abriendo una posibilidad que influiría profundamente en los compositores posteriores.",
+    listen: "En el cuarto movimiento de la Novena escucha primero cómo aparece gradualmente el tema de la 'Oda a la alegría'. Cuando finalmente entran las voces, la melodía ya resulta familiar: Beethoven convierte ese reconocimiento en una poderosa sensación de comunidad y fraternidad.",
+    curiosity: "En el estreno de la Novena, Beethoven estaba ya profundamente sordo. La tradición cuenta que, al terminar, una de las intérpretes tuvo que hacerlo girar para que pudiera ver los aplausos del público."
   }
 };
 const moreBtn=document.getElementById("moreBtn"), moreInfo=document.getElementById("moreInfo");
