@@ -41,5 +41,17 @@ button,#listen{display:inline-block;margin-top:16px;padding:13px 20px;border:1px
   font-size:12px;
   font-weight:700;
   letter-spacing:1px;
+  #scanAgain{
+  margin-top:12px;
+  width:100%;
+  padding:11px 14px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  color:white;
+  font-weight:700;
+  letter-spacing:.6px;
+  cursor:pointer;
+}
   text-align:center;
 }
