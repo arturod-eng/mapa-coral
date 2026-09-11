@@ -669,7 +669,7 @@ ctx.drawImage(
         "Viendo: " + people[best.id].name +
         " · coincidencias " + best.good;
 
-      if (stableCount >= 2 && lastShown !== best.id) {
+      if (stableCount >= 3 && lastShown !== best.id) {
         showCard(best.id);
       }
     } else {
