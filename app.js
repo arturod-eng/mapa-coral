@@ -607,15 +607,26 @@ async function analyseFrame() {
   let feat = null;
 
   try {
-    const vw = video.videoWidth || 640;
-    const vh = video.videoHeight || 480;
-    const scale = Math.min(1, 720 / Math.max(vw, vh));
+const vw = video.videoWidth || 640;
+const vh = video.videoHeight || 480;
 
-    canvas.width = Math.max(1, Math.round(vw * scale));
-    canvas.height = Math.max(1, Math.round(vh * scale));
+/* Analizar solamente la zona central */
+const cropSide = Math.min(vw, vh) * 0.55;
+const sx = (vw - cropSide) / 2;
+const sy = (vh - cropSide) / 2;
 
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+const scale = Math.min(1, 720 / cropSide);
+
+canvas.width = Math.max(1, Math.round(cropSide * scale));
+canvas.height = Math.max(1, Math.round(cropSide * scale));
+
+const ctx = canvas.getContext("2d", { willReadFrequently: true });
+
+ctx.drawImage(
+  video,
+  sx, sy, cropSide, cropSide,
+  0, 0, canvas.width, canvas.height
+);
 
     src = cv.imread(canvas);
     feat = orbFromMat(src, 640);
