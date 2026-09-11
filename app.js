@@ -249,7 +249,7 @@ const datesEl = document.getElementById("dates");
 const workEl = document.getElementById("work");
 const listenEl = document.getElementById("listen");
 const scanAgain = document.getElementById("scanAgain");
-
+const scanBtn = document.getElementById("scanBtn");
 let running = false;
 let cvReady = false;
 let refs = {};
@@ -257,7 +257,7 @@ let lastWinner = null;
 let stableCount = 0;
 let lastShown = null;
 let busy = false;
-let paused = false;
+let paused = true;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -601,13 +601,34 @@ function hideCard() {
   card.classList.add("hidden");
   lastShown = null;
 }
-scanAgain.onclick = () => {
-  hideCard();
+scanBtn.onclick = () => {
   paused = false;
   stableCount = 0;
   lastWinner = null;
+  scanBtn.disabled = true;
+  scanBtn.textContent = "IDENTIFICANDO...";
+  statusEl.textContent = "Buscando compositor...";
+  setTimeout(() => {
+  if (!paused) {
+    paused = true;
+    stableCount = 0;
+    lastWinner = null;
+    scanBtn.disabled = false;
+    scanBtn.textContent = "ESCANEAR";
+    statusEl.textContent = "No reconocido. Ajusta el encuadre y vuelve a pulsar ESCANEAR";
+  }
+}, 4500);
+
+};
+scanAgain.onclick = () => {
+  hideCard();
+  paused = true;
+  stableCount = 0;
+  lastWinner = null;
   lastShown = null;
-  statusEl.textContent = "Apunta a uno de los 33 compositores";
+  scanBtn.disabled = false;
+scanBtn.textContent = "ESCANEAR";
+  statusEl.textContent = "Centra un compositor y pulsa ESCANEAR";
 };
 async function analyseFrame() {
   if (paused || !running || busy || !cvReady || video.readyState < 2) return;
