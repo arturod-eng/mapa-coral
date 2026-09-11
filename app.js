@@ -677,11 +677,7 @@ ctx.drawImage(
       lastWinner = null;
       statusEl.textContent = "Buscando compositor…";
 
-      if (lastShown) {
-        setTimeout(() => {
-          if (stableCount === 0) hideCard();
-        }, 1200);
-      }
+     
     }
   } catch (err) {
     console.error(err);
