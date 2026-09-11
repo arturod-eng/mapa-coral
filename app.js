@@ -248,6 +248,7 @@ const nameEl = document.getElementById("name");
 const datesEl = document.getElementById("dates");
 const workEl = document.getElementById("work");
 const listenEl = document.getElementById("listen");
+const scanAgain = document.getElementById("scanAgain");
 
 let running = false;
 let cvReady = false;
@@ -256,6 +257,7 @@ let lastWinner = null;
 let stableCount = 0;
 let lastShown = null;
 let busy = false;
+let paused = false;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -592,15 +594,23 @@ function populateExtendedInfo(id){
 populateExtendedInfo(id);
   card.classList.remove("hidden");
   lastShown = id;
+  paused = true;
 }
 
 function hideCard() {
   card.classList.add("hidden");
   lastShown = null;
 }
-
+scanAgain.onclick = () => {
+  hideCard();
+  paused = false;
+  stableCount = 0;
+  lastWinner = null;
+  lastShown = null;
+  statusEl.textContent = "Apunta a uno de los 33 compositores";
+};
 async function analyseFrame() {
-  if (!running || busy || !cvReady || video.readyState < 2) return;
+  if (paused || !running || busy || !cvReady || video.readyState < 2) return;
   busy = true;
 
   let src = null;
